@@ -1,0 +1,25 @@
+apps:
+  supabase-web:
+    type: web
+    run: "npm run dev:www"
+
+  supabase-worker:
+    type: worker
+    run: "npm run dev"
+
+  supabase-dashboard:
+    type: web
+    run: "npm run dev:studio"
+
+  supabase-docs:
+    type: web
+    run: "npm run dev:docs"
+
+release:
+  run: "npm install"
+
+config:
+  resources:
+    requests:
+      cpu: 200m
+      memory: 256Mi
