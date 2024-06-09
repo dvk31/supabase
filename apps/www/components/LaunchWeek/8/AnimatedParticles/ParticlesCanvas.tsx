@@ -17,7 +17,7 @@ const ParticlesCanvas = () => {
   // to stop unnecessary computations
   const handleScroll = () => {
     if (canvasRef.current && typeof window !== 'undefined') {
-      const rect = (canvasRef.current as HTMLDivElement)?.getBoundingClientRect()
+      const rect = (canvasRef.current as HTMLCanvasElement)?.getBoundingClientRect()
       const isInView = rect.bottom > 0
 
       setAnimate(isInView)
@@ -72,7 +72,7 @@ const ParticlesCanvas = () => {
       className="relative z-30"
     >
       <ambientLight intensity={config.lightIntensity} />
-      <group position={[0, 70, 0]} scale={[0.75, 0.75, 0.75]}>
+      <group position={[0, 0, 0]} scale={[1, 1, 1]}>
         {particles?.map((user: any, index: number) => (
           <Particle
             key={`particle-${user.username ?? index}`}

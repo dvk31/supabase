@@ -7,12 +7,37 @@ module.exports = [
   {
     permanent: true,
     source: '/docs/guides/storage-caching',
-    destination: '/docs/guides/storage/cdn',
+    destination: '/docs/guides/storage/cdn/fundamentals',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/storage/cdn',
+    destination: '/docs/guides/storage/cdn/fundamentals',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/storage/uploads',
+    destination: '/docs/guides/storage/uploads/standard-uploads',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/storage/image-transformations',
+    destination: '/docs/guides/storage/serving/image-transformations',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/storage/access-control',
+    destination: 'docs/guides/storage/security/access-control',
   },
   {
     permanent: true,
     source: '/database/Database',
     destination: '/database',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/database/column-encryption',
+    destination: '/docs/guides/database/extensions/pgsodium',
   },
   {
     permanent: true,
@@ -607,6 +632,11 @@ module.exports = [
   },
   {
     permanent: true,
+    source: '/blog/supavisor-postgres-connection-pooler-ga',
+    destination: '/blog/supavisor-postgres-connection-pooler',
+  },
+  {
+    permanent: true,
     source: '/blog/2022/06/15/blog/2022/06/29/visualizing-supabase-data-using-metabase',
     destination: '/blog/visualizing-supabase-data-using-metabase',
   },
@@ -734,11 +764,6 @@ module.exports = [
     permanent: true,
     source: '/blog/2021/02/02/supabase-beta-january-2021',
     destination: '/blog/supabase-beta-january-2021',
-  },
-  {
-    permanent: true,
-    source: '/blog/2021/02/09/case-study-roboflow',
-    destination: '/customers/roboflow',
   },
   {
     permanent: true,
@@ -1170,37 +1195,47 @@ module.exports = [
   {
     permanent: true,
     source: '/docs/reference/cli/supabase-db-branch-list',
-    destination: '/docs/reference/supabase-db',
+    destination: '/docs/reference/supabase-branches-list',
   },
   {
     permanent: true,
     source: '/docs/reference/cli/supabase-db-branch-create',
-    destination: '/docs/reference/supabase-db',
+    destination: '/docs/reference/supabase-branches-create',
   },
   {
     permanent: true,
     source: '/docs/reference/cli/supabase-db-branch-delete',
-    destination: '/docs/reference/supabase-db',
+    destination: '/docs/reference/supabase-branches-delete',
   },
   {
     permanent: true,
     source: '/docs/reference/cli/supabase-db-switch',
-    destination: '/docs/reference/supabase-db',
+    destination: '/docs/reference/supabase-branches-create',
   },
   {
     permanent: true,
     source: '/docs/reference/cli/supabase-db-changes',
-    destination: '/docs/reference/supabase-db',
+    destination: '/docs/reference/supabase-db-diff',
   },
   {
     permanent: true,
     source: '/docs/reference/cli/supabase-db-commit',
-    destination: '/docs/reference/supabase-db',
+    destination: '/docs/reference/supabase-db-pull',
   },
   {
     permanent: true,
     source: '/docs/reference/cli/supabase-db-remote-set',
-    destination: '/docs/reference/supabase-db',
+    destination: '/docs/reference/supabase-link',
+  },
+  {
+    permanent: true,
+    source: '/docs/reference/cli/supabase-db-remote-changes',
+    destination: '/docs/reference/supabase-db-diff',
+  },
+  {
+    permanent: true,
+    source: '/docs/reference/cli/supabase-db-remote-commit',
+    destination: '/docs/reference/supabase-db-pull',
   },
 
   {
@@ -1705,7 +1740,12 @@ module.exports = [
   {
     permanent: true,
     source: '/docs/guides/with-expo',
-    destination: '/docs/guides/getting-started/tutorials/with-expo',
+    destination: '/docs/guides/getting-started/tutorials/with-expo-react-native',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/getting-started/tutorials/with-expo',
+    destination: '/docs/guides/getting-started/tutorials/with-expo-react-native',
   },
   {
     permanent: true,
@@ -1849,6 +1889,11 @@ module.exports = [
   },
   {
     permanent: true,
+    source: '/supasquad',
+    destination: '/open-source/contributing/supasquad',
+  },
+  {
+    permanent: true,
     source: '/contact/enterprise',
     destination: 'https://forms.supabase.com/enterprise',
   },
@@ -1861,11 +1906,6 @@ module.exports = [
     permanent: true,
     source: '/docs/reference/javascript/upgrade-guide',
     destination: '/docs/reference/javascript/v1/upgrade-guide',
-  },
-  {
-    permanent: true,
-    source: '/docs/reference/dart/upgrade-guide',
-    destination: '/docs/reference/dart/v0/upgrade-guide',
   },
   {
     permanent: true,
@@ -1945,11 +1985,6 @@ module.exports = [
     permanent: true,
     source: '/blog/case-study-xendit',
     destination: '/customers/xendit',
-  },
-  {
-    permanent: true,
-    source: '/blog/case-study-roboflow',
-    destination: '/customers',
   },
   {
     permanent: true,
@@ -2040,6 +2075,11 @@ module.exports = [
     permanent: true,
     source: '/docs/guides/realtime/quickstart',
     destination: '/docs/guides/realtime',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/realtime/guides/client-side-throttling',
+    destination: '/docs/guides/realtime/quotas',
   },
   {
     permanent: true,
@@ -2258,4 +2298,244 @@ module.exports = [
     destination: '/docs/guides/platform/oauth-apps/build-a-supabase-integration',
   },
   { permanent: true, source: '/docs/reference/cli/config', destination: '/docs/guides/cli/config' },
+  {
+    permanent: true,
+    source: '/docs/guides/database/timeouts',
+    destination: '/docs/guides/database/postgres/configuration',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/database/managing-timezones',
+    destination: '/docs/guides/database/postgres/configuration',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/database/managing-passwords',
+    destination: '/docs/guides/database/postgres/roles#passwords',
+  },
+  {
+    permanent: true,
+    source: '/blog/pgvector-v0-5-0-hnsw',
+    destination: '/blog/increase-performance-pgvector-hnsw',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/ai/managing-indexes',
+    destination: '/docs/guides/ai/vector-indexes',
+  },
+  {
+    permanent: true,
+    source: '/blog/supabase-ai-content-storm',
+    destination: 'https://dev.to/supabase/ai-ignites-the-rain-content-storm-is-back-kdl',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/functions/global-deployments',
+    destination: '/docs/guides/functions/regional-invocation',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/functions/typescript-support',
+    destination: '/docs/guides/functions',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/functions/troubleshooting',
+    destination: '/docs/guides/functions/debugging',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/auth/auth-magic-link',
+    destination: '/docs/guides/auth/passwordless-login/auth-magic-link',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/auth/auth-password-reset',
+    destination: '/docs/guides/auth/passwords',
+  },
+  {
+    permanent: true,
+    source: '/docs/reference/dart/sign-in-with-apple',
+    destination: '/docs/reference/dart/sign-in-with-id-token',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/database/large-datasets',
+    destination: '/docs/guides/database/import-data',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/api/rest/debugging-performance',
+    destination: '/docs/guides/database/debugging-performance',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/api/rest/joins-and-nesting',
+    destination: '/docs/guides/database/joins-and-nesting',
+  },
+  {
+    permanent: true,
+    source: '/docs/learn/auth-deep-dive/auth-deep-dive-jwts',
+    destination: '/docs/guides/auth/auth-deep-dive/auth-deep-dive-jwts',
+  },
+  {
+    permanent: true,
+    source: '/docs/learn/auth-deep-dive/auth-row-level-security',
+    destination: '/docs/guides/auth/auth-deep-dive/auth-row-level-security',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/auth/column-level-security',
+    destination: '/docs/guides/database/postgres/column-level-security',
+  },
+  {
+    permanent: true,
+    source: '/docs/learn/auth-deep-dive/auth-policies',
+    destination: '/docs/guides/auth/auth-deep-dive/auth-policies',
+  },
+  {
+    permanent: true,
+    source: '/docs/learn/auth-deep-dive/auth-gotrue',
+    destination: '/docs/guides/auth/auth-deep-dive/auth-gotrue',
+  },
+  {
+    permanent: true,
+    source: '/docs/learn/auth-deep-dive/auth-google-oauth',
+    destination: '/docs/guides/auth/auth-deep-dive/auth-google-oauth',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/auth/sso/auth-sso-saml',
+    destination: '/docs/guides/auth/enterprise-sso/auth-sso-saml',
+  },
+  {
+    permanent: true,
+    source: '/contact/mfa',
+    destination: '/docs/guides/auth/auth-mfa',
+  },
+  {
+    permanent: false,
+    source: '/launch-week',
+    destination: '/ga-week',
+  },
+  {
+    permanent: false,
+    source: '/special-announcement',
+    destination: '/ga-week',
+  },
+  {
+    permanent: false,
+    source: '/launch-week/tickets/:path*',
+    destination: '/ga-week/tickets/:path*',
+  },
+  {
+    permanent: false,
+    source: '/special-announcement/tickets/:path*',
+    destination: '/ga-week/tickets/:path*',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/database/sql-to-api',
+    destination: '/docs/guides/api/sql-to-api',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/database/database-linter',
+    destination: '/docs/guides/database/database-advisors',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/auth/auth-email',
+    destination: '/docs/guides/auth/passwords',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/auth/passwordless-login/auth-magic-link',
+    destination: '/docs/guides/auth/auth-email-passwordless',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/auth/passwordless-login/auth-email-otp',
+    destination: '/docs/guides/auth/auth-email-passwordless',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/auth/native-mobile-login',
+    destination: '/docs/guides/auth/social-login',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/auth/concepts/redirect-urls',
+    destination: '/docs/guides/auth/redirect-urls',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/auth/auth-user-management',
+    destination: '/docs/guides/auth/managing-user-data',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/auth/auth-deep-dive/auth-deep-dive-jwts',
+    destination: '/docs/guides/auth/jwts',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/auth/row-level-security',
+    destination: '/docs/guides/database/postgres/row-level-security',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/auth/column-level-security',
+    destination: '/docs/guides/database/postgres/column-level-security',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/auth/custom-claims-and-role-based-access-control-rbac',
+    destination: '/docs/guides/database/postgres/custom-claims-and-role-based-access-control-rbac',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/auth/auth-deep-dive/auth-google-oauth',
+    destination: '/docs/guides/auth/social-login/auth-google',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/auth/auth-deep-dive/auth-gotrue',
+    destination: '/docs/guides/auth/architecture',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/auth/auth-deep-dive/auth-policies',
+    destination: '/docs/guides/database/postgres/row-level-security',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/auth/auth-deep-dive/auth-row-level-security',
+    destination: '/docs/guides/database/postgres/row-level-security',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/auth/server-side-rendering',
+    destination: '/docs/guides/auth/server-side',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/auth/server-side/overview',
+    destination: '/docs/guides/auth/server-side',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/auth/server-side/email-based-auth-with-pkce-flow-for-ssr',
+    destination: '/docs/guides/auth/server-side',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/auth/server-side/oauth-with-pkce-flow-for-ssr',
+    destination: '/docs/guides/auth/server-side',
+  },
+  {
+    permanent: true,
+    source: '/docs/guides/api/data-apis',
+    destination: '/docs/guides/api',
+  },
 ]

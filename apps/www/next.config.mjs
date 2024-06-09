@@ -1,16 +1,16 @@
 import bundleAnalyzer from '@next/bundle-analyzer'
 import nextMdx from '@next/mdx'
 
-import remarkGfm from 'remark-gfm'
 import rehypeSlug from 'rehype-slug'
+import remarkGfm from 'remark-gfm'
 
-import rewrites from './lib/rewrites.js'
 import redirects from './lib/redirects.js'
-
-import withTM from 'next-transpile-modules'
+import rewrites from './lib/rewrites.js'
 
 import { remarkCodeHike } from '@code-hike/mdx'
 import codeHikeTheme from 'config/code-hike.theme.json' assert { type: 'json' }
+
+import { withContentlayer } from 'next-contentlayer2'
 
 const withMDX = nextMdx({
   extension: /\.mdx?$/,
@@ -36,27 +36,34 @@ const withBundleAnalyzer = bundleAnalyzer({
   enabled: process.env.ANALYZE === 'true',
 })
 
+/**
+ * @type {import('next').NextConfig}
+ */
 const nextConfig = {
   basePath: '',
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   trailingSlash: false,
+  transpilePackages: ['ui', 'ui-patterns', 'common', 'shared-data', 'icons', 'api-types'],
+  reactStrictMode: true,
+  swcMinify: true,
   images: {
     dangerouslyAllowSVG: true,
     domains: [
-      'avatars.githubusercontent.com',
-      'github.com',
-      'ca.slack-edge.com',
-      'res.cloudinary.com',
-      'images.unsplash.com',
-      'supabase.com',
-      'obuldanrptloktxcffvn.supabase.co',
-      'avatars.githubusercontent.com',
-      'colab.research.google.com',
       'api.producthunt.com',
+      'avatars.githubusercontent.com',
+      'ca.slack-edge.com',
+      'colab.research.google.com',
+      'github.com',
       'https://s3-us-west-2.amazonaws.com',
-      's3-us-west-2.amazonaws.com',
-      'user-images.githubusercontent.com',
+      'images.unsplash.com',
+      'img.youtube.com',
+      'vercel.com',
+      'obuldanrptloktxcffvn.supabase.co',
       'pbs.twimg.com',
+      'res.cloudinary.com',
+      's3-us-west-2.amazonaws.com',
+      'supabase.com',
+      'user-images.githubusercontent.com',
     ],
   },
   async headers() {
@@ -90,6 +97,6 @@ const nextConfig = {
 
 // next.config.js.
 export default () => {
-  const plugins = [withMDX, withBundleAnalyzer, withTM(['ui', 'common', 'shared-data'])]
+  const plugins = [withContentlayer, withMDX, withBundleAnalyzer]
   return plugins.reduce((acc, next) => next(acc), nextConfig)
 }
